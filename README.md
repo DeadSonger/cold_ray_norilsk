@@ -15,7 +15,7 @@
 
 1) Главное меню:
    
-   ![Главное меню](https://github.com/DeadSonger/cold_ray_norilsk/master/description/main_menu.png)
+   ![Главное меню](https://github.com/DeadSonger/cold_ray_norilsk/blob/master/description/main_menu.png)
    
    На главном меню отражены три кнопки:
    * Новая игра, которая делает переход к игровому процессу
@@ -24,7 +24,7 @@
 
 2) Меню настройки управления:
     
-    ![Главное меню](https://github.com/DeadSonger/cold_ray_norilsk/master/description/settings_menu.png)
+    ![Главное меню](https://github.com/DeadSonger/cold_ray_norilsk/blob/master/description/settings_menu.png)
     
     Предосталяет доступ к настройкам управления, позволяя переназначать клавиши управления.
 
