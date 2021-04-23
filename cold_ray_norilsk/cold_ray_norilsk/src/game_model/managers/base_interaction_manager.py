@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import Type, List
 
-from cold_ray_notilsk.src.game_model.mechanics.interaction.i_interactable import IInteractable
+from cold_ray_norilsk.src.game_model.mechanics.interaction.i_interactable import IInteractable
 
 
 class BInteractionManager(ABC):
