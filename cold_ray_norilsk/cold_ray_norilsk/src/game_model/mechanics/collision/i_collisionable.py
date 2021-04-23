@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import Type, List, Tuple
 
-from cold_ray_notilsk.src.game_model.mechanics.collision.base_shape import BShape
+from cold_ray_norilsk.src.game_model.mechanics.collision.base_shape import BShape
 
 
 class ICollisionable(ABC):

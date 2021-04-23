@@ -1,8 +1,8 @@
 from abc import ABC
 from typing import Type
 
-from cold_ray_notilsk.src.graphics.i_drawable import IDrawable
-from cold_ray_notilsk.src.graphics.base_texture import BTexture
+from cold_ray_norilsk.src.graphics.i_drawable import IDrawable
+from cold_ray_norilsk.src.graphics.base_texture import BTexture
 
 
 class BTile(IDrawable, ABC):

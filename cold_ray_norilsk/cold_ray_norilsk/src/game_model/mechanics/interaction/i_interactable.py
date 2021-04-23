@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import Type
 
-from cold_ray_notilsk.src.game_model.entity.base_entity import BEntity
+from cold_ray_norilsk.src.game_model.entity.base_entity import BEntity
 
 
 class IInteractable(ABC):

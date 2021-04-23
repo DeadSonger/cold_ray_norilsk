@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import Type, List, NamedTuple, Tuple
 
-from cold_ray_notilsk.src.game_model.mechanics.collision.i_collisionable import ICollisionable
+from cold_ray_norilsk.src.game_model.mechanics.collision.i_collisionable import ICollisionable
 
 
 CollisionInfo = NamedTuple('CollisionInfo',
