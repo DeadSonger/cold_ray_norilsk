@@ -21,6 +21,7 @@ class BObject(BEntity, ABC):
                  v_y: float = 0.0,
                  a_x: float = 0.0,
                  a_y: float = 0.0):
+        super().__init__()
         self.x_pos = x
         self.y_pos = y
 
