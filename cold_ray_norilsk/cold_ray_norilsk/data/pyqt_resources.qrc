@@ -1,0 +1,10 @@
+<RCC>
+<qresource prefix="button">
+    <file alias="clear.png">images/clear.png</file>
+    <file alias="pressed.png">images/pressed.png</file>
+    <file alias="hover.png">images/hover.png</file>
+</qresource>
+<qresource prefix="">
+    <file alias="icon.png">images/icon.png</file>
+</qresource>
+</RCC>
