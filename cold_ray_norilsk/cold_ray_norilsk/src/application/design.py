@@ -1,9 +1,9 @@
 from PyQt5 import QtCore, QtWidgets, QtGui
-import resources
+import cold_ray_norilsk.src.application.resources
 
 from os.path import join
-from cold_ray_norilsk.cold_ray_norilsk.data import styles
-from cold_ray_norilsk.cold_ray_norilsk.src.application.locs import languages
+from cold_ray_norilsk.data import styles
+from cold_ray_norilsk.src.application.locs import languages
 
 
 class Design(object):

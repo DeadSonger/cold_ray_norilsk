@@ -1,7 +1,7 @@
 from PyQt5 import QtWidgets, QtGui, QtCore
-import resources
+import cold_ray_norilsk.src.application.resources
 
-from cold_ray_norilsk.cold_ray_norilsk.src.application.design import Design
+from cold_ray_norilsk.src.application.design import Design
 
 
 QtCore.QCoreApplication.setOrganizationName("bestgameeveruveseen")
