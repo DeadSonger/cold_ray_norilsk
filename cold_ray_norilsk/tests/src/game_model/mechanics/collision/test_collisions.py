@@ -17,7 +17,7 @@ def test_circle_rect_collision():
     test_circle_4 = Circle(2.4230769230769, 0, 3.948224852071)
     assert test_circle_4.intersect_with(test_rect)
 
-    test_circle_5 = Circle(-1, 0.8, 0.34)
+    test_circle_5 = Circle(-1, 0.8, 0.7)
     assert test_circle_5.intersect_with(test_rect)
 
     test_circle_6 = Circle(-1, 0.8, 0.32)
