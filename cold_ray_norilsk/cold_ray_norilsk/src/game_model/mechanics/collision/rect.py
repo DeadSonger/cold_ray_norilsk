@@ -1,10 +1,6 @@
 from math import sqrt
 
 from cold_ray_norilsk.src.game_model.mechanics.collision.base_shape import BShape
-from cold_ray_norilsk.src.game_model.mechanics.collision.circle import Circle
-from cold_ray_norilsk.src.game_model.mechanics.collision.helper import (
-    do_polygons_intersect, rect_to_polygon, do_circle_intersect_polygon
-)
 
 
 class Rect(BShape):
@@ -21,6 +17,10 @@ class Rect(BShape):
         return sqrt(self.w**2 + self.h**2)
 
     def intersect_with(self, other: BShape) -> bool:
+        from cold_ray_norilsk.src.game_model.mechanics.collision.circle import Circle
+        from cold_ray_norilsk.src.game_model.mechanics.collision.helper import (
+            do_polygons_intersect, rect_to_polygon, do_circle_intersect_polygon
+        )
         d_x = self.x - other.x
         d_y = self.y - other.y
         if d_x ** 2 + d_y ** 2 > (self.r + other.diameter / 2) ** 2:
