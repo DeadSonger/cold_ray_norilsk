@@ -1,3 +1,8 @@
+"""
+This file is used for fast operations on localization. It consists of a list of all the languages on its own language,
+language_codes and translation of all the text in the app into some language.
+"""
+
 langs = [
     "afrikaans", "shqiptar", "አማርኛ", "عربى", "հայերեն", "Azərbaycan", "basque", "беларускі", "বাংলা",
     "bosanski", "български", "català", "cebuano", "Chichewa", "简体中文", "中國傳統的", "Corsu", "Hrvatski",

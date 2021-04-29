@@ -8,6 +8,9 @@ from cold_ray_norilsk.src.application.locs import languages
 
 class Design(object):
     def __init__(self):
+        """
+        Init all interfaces as Nones.
+        """
         self.window = None
         self.main_widget = None
         self.m_layout = None
@@ -23,6 +26,11 @@ class Design(object):
         self.trans = None
 
     def setup_ui(self, main_window: QtWidgets.QWidget):
+        """
+        This method is used for setup of our application. All the buttons are created here, along as layouts and menus.
+        Translator is initialized here. The main widget of our application is set as central widget of main window
+        :param main_window: this is main window of our application.
+        """
         size_policy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Maximum)
         spacer_item = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
 
@@ -85,15 +93,31 @@ class Design(object):
         self.window.setCentralWidget(self.main_widget)
 
     def setup_settings(self):
+        """
+        This method is used to handle the change of layout from main_menu into settings_menu.
+        It is used as slot for settings button.
+        :return: None
+        """
         self.main_menu.hide()
         self.settings_menu.show()
 
     def setup_main(self):
+        """
+        This method is used to handle change of layout from settings_menu into main_menu.
+        It is used as slot for back button
+        :return: None
+        """
         self.settings_menu.hide()
         self.main_menu.show()
 
     @QtCore.pyqtSlot(int)
     def change_func(self, index):
+        """
+        This method is used for changing language translations. It gets index of language in combo-box,
+        and set translator file. Then it will install this translator into the application
+        :param index: index of language in combo-box
+        :return: None
+        """
         data = self.language_switch.itemData(index)
         if data:
             self.trans.load(data, join("cold_ray_norilsk", "src", "application", "locs"))
@@ -103,5 +127,10 @@ class Design(object):
 
     @staticmethod
     def make_evil(widget: QtWidgets.QWidget):
+        """
+        This method set StyleSheet for a widget
+        :param widget: widget to be styled
+        :return: new, styled widget
+        """
         widget.setStyleSheet(styles.button_style)
         return widget
