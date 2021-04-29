@@ -1,11 +1,8 @@
 from cold_ray_norilsk.src.game_model.mechanics.collision.base_shape import BShape
-from cold_ray_norilsk.src.game_model.mechanics.collision.rect import Rect
-from cold_ray_norilsk.src.game_model.mechanics.collision.helper import (
-    rect_to_polygon, do_circle_intersect_polygon
-)
 
 
 class Circle(BShape):
+    """Base circle shape."""
 
     __slots__ = ['r']
 
@@ -18,6 +15,10 @@ class Circle(BShape):
         return self.r * 2
 
     def intersect_with(self, other: BShape) -> bool:
+        from cold_ray_norilsk.src.game_model.mechanics.collision.rect import Rect
+        from cold_ray_norilsk.src.game_model.mechanics.collision.helper import (
+            rect_to_polygon, do_circle_intersect_polygon
+        )
         d_x = self.x - other.x
         d_y = self.y - other.y
         if d_x ** 2 + d_y ** 2 > (self.r + other.diameter / 2) ** 2:

@@ -32,6 +32,11 @@ class BObject(BEntity, ABC):
         self.y_acceleration = a_y
 
     def tick(self, dt: float):
+        """one tick of time
+
+        :param dt: passed time
+        :type dt: float
+        """
         self.x_pos += dt * self.x_velocity
         self.y_pos += dt * self.y_velocity
 

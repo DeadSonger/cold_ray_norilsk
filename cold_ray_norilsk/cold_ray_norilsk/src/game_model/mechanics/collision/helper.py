@@ -5,6 +5,7 @@ from cold_ray_norilsk.src.game_model.mechanics.collision.rect import Rect
 
 
 def rect_to_polygon(rect: Rect) -> List[Tuple[float, float]]:
+    """Transform Rect object into polygon."""
     points = []
     points.append((-rect.w / 2, -rect.h / 2))
     points.append((rect.w / 2, -rect.h / 2))
@@ -19,6 +20,7 @@ def do_polygons_intersect(
     poly_a: List[Tuple[float, float]],
     poly_b: List[Tuple[float, float]]
 ) -> bool:
+    """Check if two polugens interect with Separating Axis Theorem."""
     for polygon in [poly_a, poly_b]:
         # for each polygon, look at each edge of the polygon, and determine
         # if it separates the two shapes
@@ -65,6 +67,7 @@ def point_nearest_segment(
     point_a: Tuple[float, float],
     point_b: Tuple[float, float]
 ):
+    """Find the nearest point of the segment."""
     px = point_b[0] - point_a[0]
     py = point_b[1] - point_a[1]
     norm = px * px + py * py
@@ -81,6 +84,7 @@ def do_circle_intersect_polygon(
     radius: float,
     polygon: List[Tuple[float, float]]
 ) -> bool:
+    """Check if circle intersects with polygon."""
     radius_sqr = radius ** 2
     for idx, point_a in enumerate(polygon):
         point_b = polygon[(idx + 1) % len(polygon)]
