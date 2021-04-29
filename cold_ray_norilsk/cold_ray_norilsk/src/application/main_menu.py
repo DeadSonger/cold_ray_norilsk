@@ -1,5 +1,9 @@
+import os
+from os.path import join
 from PyQt5 import QtWidgets, QtGui, QtCore
+
 import cold_ray_norilsk.src.application.resources
+import cold_ray_norilsk.src.application.locs.languages as languages
 
 from cold_ray_norilsk.src.application.design import Design
 
@@ -14,6 +18,7 @@ class MyApp(QtWidgets.QMainWindow, Design):
         super().__init__()
         self.resize(640, 480)
         self.setup_ui(self)
+        self.set_default_locale()
         self.retranslate_ui()
         self.connect_callbacks()
 
@@ -39,6 +44,16 @@ class MyApp(QtWidgets.QMainWindow, Design):
         self.settings_button.setText(QtWidgets.QApplication.translate("Design", "Settings"))
         self.exit_button.setText(QtWidgets.QApplication.translate("Design", "Suicide"))
         self.back_button.setText(QtWidgets.QApplication.translate("Design", "Back"))
+
+    def set_default_locale(self):
+        if os.environ.get("LANG"):
+            prefix = os.environ.get("LANG").split("_")[0]
+            if prefix in languages.codes and prefix != "en":
+                self.language_switch.setCurrentIndex(languages.codes.index(prefix))
+                self.change_func(languages.codes.index(prefix))
+        else:
+            self.language_switch.setCurrentIndex(languages.codes.index("en"))
+            self.change_func(languages.codes.index("en"))
 
 
 def start_application():
