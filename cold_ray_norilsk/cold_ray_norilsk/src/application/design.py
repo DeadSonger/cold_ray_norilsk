@@ -96,7 +96,7 @@ class Design(object):
     def change_func(self, index):
         data = self.language_switch.itemData(index)
         if data:
-            self.trans.load(data, join("cold_ray_norilsk", "cold_ray_norilsk", "src", "application", "locs"))
+            self.trans.load(data, join("cold_ray_norilsk", "src", "application", "locs"))
             QtWidgets.QApplication.instance().installTranslator(self.trans)
         else:
             QtWidgets.QApplication.instance().removeTranslator(self.trans)
