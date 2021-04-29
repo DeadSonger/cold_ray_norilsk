@@ -1,0 +1,1 @@
+from tests.src.game_model.utils.test_callback_object import test_get_var_callback
