@@ -1,5 +1,5 @@
 from PyQt5 import QtCore, QtWidgets, QtGui
-import cold_ray_norilsk.src.application.resources
+import cold_ray_norilsk.src.application.resources  # noqa: F401
 
 from os.path import join
 from cold_ray_norilsk.data import styles

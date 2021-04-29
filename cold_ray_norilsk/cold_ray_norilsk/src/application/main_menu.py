@@ -1,5 +1,4 @@
 import os
-from os.path import join
 from PyQt5 import QtWidgets, QtGui, QtCore
 
 import cold_ray_norilsk.src.application.locs.languages as languages
