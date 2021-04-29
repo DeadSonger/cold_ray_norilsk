@@ -13,13 +13,13 @@ QtCore.QCoreApplication.setApplicationName("Cold Ray Norilsk")
 
 
 class MyApp(QtWidgets.QMainWindow, Design):
-    """
-    MyApp is the main class for handling and displaying the UI.
-    """
+    """MyApp is the main class for handling and displaying the UI."""
+
     def __init__(self):
-        """
-        We setup all the needed ui in this method, then set locale, retranslate all the texts to this locale, and
-        connect callbacks to slots
+        """Initialize the application.
+
+        We setup all the needed ui in this method, then set locale, retranslate all the texts
+        to this locale, and connect callbacks to slots
         """
         super().__init__()
         self.resize(640, 480)
@@ -32,18 +32,18 @@ class MyApp(QtWidgets.QMainWindow, Design):
         self.setWindowIcon(QtGui.QIcon(":icon.png"))
 
     def connect_callbacks(self):
-        """
-        Method that connects callback to slots
-        :return: None
-        """
+        """Connect callbacks to slots."""
         self.settings_button.clicked.connect(self.setup_settings)
         self.back_button.clicked.connect(self.setup_main)
         self.exit_button.clicked.connect(self.exit)
         self.language_switch.currentIndexChanged.connect(self.change_func)
 
     def changeEvent(self, event):
-        """
-        Overriden method that will call retranslate texts if the event QtCore.QEvent.LanguageChange occurs.
+        """Retranslate UI if application language changes.
+
+        Overriden method that will call retranslate texts if
+        the event QtCore.QEvent.LanguageChange occurs.
+
         :param event: happened event
         :return: None
         """
@@ -52,13 +52,12 @@ class MyApp(QtWidgets.QMainWindow, Design):
         super().changeEvent(event)
 
     def exit(self):
-        """Simple method for exiting application and closing window"""
         self.close()
 
     def retranslate_ui(self):
-        """
-        Method to retranslate all the ui texts. All the texts of each element has to be set here
-        :return: None
+        """Retranslate all the ui texts.
+
+        All the texts of each element has to be set here
         """
         self.start_button.setText(QtWidgets.QApplication.translate("Design", "Start"))
         self.settings_button.setText(QtWidgets.QApplication.translate("Design", "Settings"))
@@ -66,10 +65,7 @@ class MyApp(QtWidgets.QMainWindow, Design):
         self.back_button.setText(QtWidgets.QApplication.translate("Design", "Back"))
 
     def set_default_locale(self):
-        """
-        Method that determines user LANG according to LANG environment variable.
-        :return: None
-        """
+        """Determine user LANG according to LANG environment variable."""
         if os.environ.get("LANG"):
             prefix = os.environ.get("LANG").split("_")[0]
             if prefix in languages.codes and prefix != "en":
