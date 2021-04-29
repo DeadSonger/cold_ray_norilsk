@@ -4,6 +4,7 @@ from cold_ray_norilsk.src.game_model.mechanics.collision.base_shape import BShap
 
 
 class Rect(BShape):
+    """Base rectangle shape."""
 
     __slots__ = ['w', 'h']
 

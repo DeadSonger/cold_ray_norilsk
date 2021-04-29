@@ -5,6 +5,7 @@ from cold_ray_norilsk.src.game_model.mechanics.collision.i_collisionable import 
 
 
 class Barrel(BObject, ICollisionable):
+    """Simple barrel object."""
 
     def __init__(self, x: float, y: float, r: float, angle: float = 0.0):
         super().__init__(x=x, y=y)

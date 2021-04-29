@@ -2,6 +2,7 @@ from cold_ray_norilsk.src.game_model.mechanics.collision.base_shape import BShap
 
 
 class Circle(BShape):
+    """Base circle shape."""
 
     __slots__ = ['r']
 
