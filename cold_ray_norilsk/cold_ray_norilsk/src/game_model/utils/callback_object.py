@@ -1,9 +1,9 @@
 from typing import ClassVar, List, Callable, Any
 
 
-def function_callback(func: Callable,
-                      pre_call: List[Callable],
-                      post_call: List[Callable]):
+def _function_callback(func: Callable,
+                       pre_call: List[Callable],
+                       post_call: List[Callable]):
     def wrapper(*args, **kwargs):
         for pc in pre_call:
             pc(*args, **kwargs)
@@ -44,15 +44,23 @@ def callback_object(pcls: ClassVar):
 
         def __setattr__(self, key: str, value):
             super().__setattr__(key, value)
-            callback_map = super().__getattribute__('_callback_map')
+            try:
+                callback_map = super().__getattribute__('_callback_map')
+            except AttributeError:
+                return
             get_key = f'{key}__set'
             if get_key in callback_map:
                 for cb in callback_map[get_key]:
-                    cb()
+                    cb(value)
 
         def __getattribute__(self, key: str):
-            callback_map = super().__getattribute__('_callback_map')
             ret = super().__getattribute__(key)
+
+            try:
+                callback_map = super().__getattribute__('_callback_map')
+            except AttributeError:
+                return ret
+
             if callable(ret):
                 pre_callbacks = []
                 pre_key = f'{key}__pre'
@@ -63,12 +71,12 @@ def callback_object(pcls: ClassVar):
                 if post_key in callback_map:
                     post_callbacks = callback_map[post_key]
 
-                ret = function_callback(ret, pre_callbacks, post_callbacks)
+                ret = _function_callback(ret, pre_callbacks, post_callbacks)
 
             get_key = f'{key}__get'
             if get_key in callback_map:
                 for cb in callback_map[get_key]:
-                    cb()
+                    cb(self)
             return ret
 
     return WrapperTwo

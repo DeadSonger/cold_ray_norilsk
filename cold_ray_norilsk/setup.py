@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name='ColdRayNorilsk',
@@ -6,8 +6,9 @@ setup(
     description='Simple game about serial killer in cold Norilsk',
     author='Timokhin Ivan, Nikolashkin Alex, Podoprosvetov Anrew',
     author_email='deadsonger@mail.ru',
-    packages=['cold_ray_norilsk'],
+    packages=find_packages(),
     install_requires=[
-        'pylint'
+        'pylint',
+        'pytest'
     ]
 )
