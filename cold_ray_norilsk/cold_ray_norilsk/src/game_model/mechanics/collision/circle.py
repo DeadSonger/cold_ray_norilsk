@@ -28,7 +28,7 @@ class Circle(BShape):
         elif isinstance(other, Rect):
             return do_circle_intersect_polygon(
                 (self.x, self.y),
-                other.r,
+                self.r,
                 rect_to_polygon(other)
             )
         assert False, f"Circle intersection with {type(other)} is not supported"
