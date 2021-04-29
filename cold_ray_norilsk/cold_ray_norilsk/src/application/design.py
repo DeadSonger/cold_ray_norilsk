@@ -1,7 +1,7 @@
 from PyQt5 import QtCore, QtWidgets, QtGui
 import cold_ray_norilsk.src.application.resources  # noqa: F401
 
-from os.path import join
+from os.path import join, dirname
 from cold_ray_norilsk.data import styles
 from cold_ray_norilsk.src.application.locs import languages
 
@@ -122,7 +122,7 @@ class Design(object):
         """
         data = self.language_switch.itemData(index)
         if data:
-            self.trans.load(data, join("cold_ray_norilsk", "src", "application", "locs"))
+            self.trans.load(data, join( dirname(__file__), "locs"))
             QtWidgets.QApplication.instance().installTranslator(self.trans)
         else:
             QtWidgets.QApplication.instance().removeTranslator(self.trans)
