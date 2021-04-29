@@ -41,7 +41,7 @@ class MyApp(QtWidgets.QMainWindow, Design):
         self.back_button.setText(QtWidgets.QApplication.translate("Design", "Back"))
 
 
-if __name__ == "__main__":
+def start_application():
     app = QtWidgets.QApplication([])
     win = MyApp()
     win.show()
