@@ -76,7 +76,7 @@ def callback_object(pcls: ClassVar):
             get_key = f'{key}__get'
             if get_key in callback_map:
                 for cb in callback_map[get_key]:
-                    cb(self)
+                    cb()
             return ret
 
     return WrapperTwo
